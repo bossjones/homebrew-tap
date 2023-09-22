@@ -1,10 +1,8 @@
-# Documentation: https://docs.brew.sh/Formula-Cookbook
-#                https://rubydoc.brew.sh/Formula
-# PLEASE REMOVE ALL GENERATED COMMENTS BEFORE SUBMITTING YOUR PULL REQUEST!
 class LibavAT123 < Formula
   desc "Audio and video processing tools"
   homepage "https://libav.org/"
-  url "https://github.com/libav/libav/archive/refs/tags/v12.3.zip"
+  # url "https://github.com/libav/libav/archive/refs/tags/v12.3.zip"
+  url "https://github.com/libav/libav/archive/refs/tags/v12.3.tar.gz"
   # version "12.3"
   sha256 "7c0eccb8520cd2b283ff4de856d209f9587f1faed34f1b38d4c9155ffaebb6e8"
   license "GPL-2.0-or-later"
