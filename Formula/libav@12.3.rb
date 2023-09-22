@@ -4,7 +4,7 @@ class LibavAT123 < Formula
   # url "https://github.com/libav/libav/archive/refs/tags/v12.3.zip"
   url "https://github.com/libav/libav/archive/refs/tags/v12.3.tar.gz"
   # version "12.3"
-  sha256 "7c0eccb8520cd2b283ff4de856d209f9587f1faed34f1b38d4c9155ffaebb6e8"
+  sha256 "68c9e91be8456d1a7cec3af497312b4ffb1a68352849c2f68a0ad596b7409089"
   license "GPL-2.0-or-later"
   revision 1
   head "https://git.libav.org/libav.git", branch: "master"
