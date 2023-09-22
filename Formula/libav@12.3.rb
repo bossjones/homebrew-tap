@@ -1,13 +1,13 @@
 class LibavAT123 < Formula
   desc "Audio and video processing tools"
-  homepage "https://libav.org/"
+  homepage "https://github.com/libav/libav"
   # url "https://github.com/libav/libav/archive/refs/tags/v12.3.zip"
   url "https://github.com/libav/libav/archive/refs/tags/v12.3.tar.gz"
   # version "12.3"
   sha256 "68c9e91be8456d1a7cec3af497312b4ffb1a68352849c2f68a0ad596b7409089"
   license "GPL-2.0-or-later"
   revision 1
-  head "https://git.libav.org/libav.git", branch: "master"
+  head "https://github.com/libav/libav.git", branch: "master"
 
   # # The homepage for this formula is a copy of the original and was created
   # # after the original was discontinued. There will be no further releases of
