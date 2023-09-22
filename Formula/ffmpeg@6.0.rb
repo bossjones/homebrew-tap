@@ -19,21 +19,21 @@ class FfmpegAT60 < Formula
     end
   end
 
-  livecheck do
-    url "https://ffmpeg.org/download.html"
-    regex(/href=.*?ffmpeg[._-]v?(\d+(?:\.\d+)+)\.t/i)
-  end
+  # livecheck do
+  #   url "https://ffmpeg.org/download.html"
+  #   regex(/href=.*?ffmpeg[._-]v?(\d+(?:\.\d+)+)\.t/i)
+  # end
 
-  bottle do
-    rebuild 1
-    sha256 arm64_ventura:  "729117c6150c83f1d777150bd7a27095694ff2223b214eea36c87fed5a3bed3b"
-    sha256 arm64_monterey: "6bb2917a8e52afcea688aca3e9ff513e61f73ab91ce7a36d6a965c9804d80cdb"
-    sha256 arm64_big_sur:  "e2a2c049c31d4aba0e9a94992eadd77325815d18271525a519e707f36252b663"
-    sha256 ventura:        "f68289b6c324ec56523280f5ef9da27bc4d91dc40492c9549fa7f2d102027e4c"
-    sha256 monterey:       "3ee3b0cbcd2a1a70d7f8f4a10e714e90cc506d80778d98d85c77941d1334f9f6"
-    sha256 big_sur:        "67fa43102ea1b4fbc40793269a1c3675d7080291f5d5ce1f34461df57b1637c1"
-    sha256 x86_64_linux:   "0ffde8698c2fde197654c833776afac30294df3cd98f8be799124dec4437db03"
-  end
+  # bottle do
+  #   rebuild 1
+  #   sha256 arm64_ventura:  "729117c6150c83f1d777150bd7a27095694ff2223b214eea36c87fed5a3bed3b"
+  #   sha256 arm64_monterey: "6bb2917a8e52afcea688aca3e9ff513e61f73ab91ce7a36d6a965c9804d80cdb"
+  #   sha256 arm64_big_sur:  "e2a2c049c31d4aba0e9a94992eadd77325815d18271525a519e707f36252b663"
+  #   sha256 ventura:        "f68289b6c324ec56523280f5ef9da27bc4d91dc40492c9549fa7f2d102027e4c"
+  #   sha256 monterey:       "3ee3b0cbcd2a1a70d7f8f4a10e714e90cc506d80778d98d85c77941d1334f9f6"
+  #   sha256 big_sur:        "67fa43102ea1b4fbc40793269a1c3675d7080291f5d5ce1f34461df57b1637c1"
+  #   sha256 x86_64_linux:   "0ffde8698c2fde197654c833776afac30294df3cd98f8be799124dec4437db03"
+  # end
 
   depends_on "pkg-config" => :build
   depends_on "aom"
