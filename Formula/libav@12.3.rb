@@ -5,7 +5,7 @@ class LibavAT123 < Formula
   desc "Audio and video processing tools"
   homepage "https://libav.org/"
   url "https://github.com/libav/libav/archive/refs/tags/v12.3.zip"
-  version "12.3"
+  # version "12.3"
   sha256 "7c0eccb8520cd2b283ff4de856d209f9587f1faed34f1b38d4c9155ffaebb6e8"
   license "GPL-2.0-or-later"
   revision 1
@@ -23,7 +23,7 @@ class LibavAT123 < Formula
   depends_on "libvorbis"
   depends_on "libvpx"
   depends_on "opus"
-  depends_on "sdl"
+  depends_on "sdl12-compat"
   depends_on "theora"
   depends_on "x264"
   depends_on "xvid"
