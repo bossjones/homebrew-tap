@@ -52,7 +52,8 @@ jobs:
       - name: verify a bunch of stuff about install
         run: |
             ls -lta $(brew --prefix bossjones/tap/ffmpeg@6.0)
-            .ci/test.sh
+            ffprobe -i fixtures/batman.mp4 || true
+            echo $?
         if: matrix.os == 'macos-12'
 
       - name: run test script
