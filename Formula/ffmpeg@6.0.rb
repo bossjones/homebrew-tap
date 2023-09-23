@@ -164,16 +164,14 @@ class FfmpegAT60 < Formula
   end
 
   def post_install
-
     # Install unversioned and major-versioned symlinks in libexec/bin.
     {
-      "ffmpeg"    => "ffmpeg#{version.major_minor}",
-      "ffplay"    => "ffplay#{version.major_minor}",
-      "ffprobe"   => "ffprobe#{version.major_minor}",
+      "ffmpeg"  => "ffmpeg#{version.major_minor}",
+      "ffplay"  => "ffplay#{version.major_minor}",
+      "ffprobe" => "ffprobe#{version.major_minor}",
     }.each do |short_name, long_name|
       (libexec/"bin").install_symlink (bin/long_name).realpath => short_name
     end
-
   end
 
   test do
