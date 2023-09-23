@@ -8,7 +8,7 @@ jobs:
   install:
     strategy:
       matrix:
-        os: [ubuntu-22.04, macos-13]
+        os: [ubuntu-22.04, macos-13, macos-12]
     runs-on: ${{ matrix.os }}
     steps:
       - name: Set up Homebrew
@@ -35,3 +35,28 @@ jobs:
 
       - name: try installing bossjones/tap/ffmpeg@6.0
         run: brew install --verbose bossjones/tap/ffmpeg@6.0
+
+      - name: install tree
+        run: brew install tree
+
+      - name: tree bossjones/tap/ffmpeg@6.0
+        run: tree $(brew --prefix bossjones/tap/ffmpeg@6.0)
+
+      - name: confirm installed
+        run: brew list | grep ffmpeg
+
+      - name: ls /usr/local/opt
+        run: ls -lta /usr/local/opt/
+        if: matrix.os == 'macos-12'
+
+      - name: verify a bunch of stuff about install
+        run: |
+            ls -lta $(brew --prefix bossjones/tap/ffmpeg@6.0)
+            ffprobe -i fixtures/batman.mp4 || true
+            echo $?
+        if: matrix.os == 'macos-12'
+
+      # - name: run test script
+      #   run: |
+      #       .ci/test.sh
+      #   if: matrix.os == 'macos-12'
