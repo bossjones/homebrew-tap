@@ -163,6 +163,19 @@ class FfmpegAT60 < Formula
     mv bin/"python", pkgshare/"python", force: true
   end
 
+  def post_install
+
+    # Install unversioned and major-versioned symlinks in libexec/bin.
+    {
+      "ffmpeg"    => "ffmpeg#{version.major_minor}",
+      "ffplay"    => "ffplay#{version.major_minor}",
+      "ffprobe"   => "ffprobe#{version.major_minor}",
+    }.each do |short_name, long_name|
+      (libexec/"bin").install_symlink (bin/long_name).realpath => short_name
+    end
+
+  end
+
   test do
     # Create an example mp4 file
     mp4out = testpath/"video.mp4"

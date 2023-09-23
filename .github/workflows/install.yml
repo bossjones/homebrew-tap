@@ -44,3 +44,18 @@ jobs:
 
       - name: confirm installed
         run: brew list | grep ffmpeg
+
+      - name: ls /usr/local/opt
+        run: ls -lta /usr/local/opt/
+        if: matrix.os == 'macos-12'
+
+      - name: verify a bunch of stuff about install
+        run: |
+            ls -lta $(brew --prefix bossjones/tap/ffmpeg@6.0)
+            .ci/test.sh
+        if: matrix.os == 'macos-12'
+
+      - name: run test script
+        run: |
+            .ci/test.sh
+        if: matrix.os == 'macos-12'
